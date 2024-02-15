@@ -71,25 +71,6 @@ const buildProfile = () => {
   };
 };
 
-const formatValue = (value, stringFormat) => {
-  if (stringFormat === StringFormatEnum.Upercase) {
-    return value.toLocaleUpperCase();
-  }
-  if (stringFormat === StringFormatEnum.Lowercase) {
-    return value.toLocaleLowerCase();
-  }
-  if (stringFormat === StringFormatEnum.StartCase) {
-    const array = value
-      .toLocaleLowerCase()
-      .split(" ")
-      .map((word) => {
-        return word.charAt(0).toLocaleUpperCase() + word.slice(1);
-      });
-    return array.join(" ");
-  }
-  return value;
-};
-
 const getRandPhone = (provincePrefix) => {
   if (provincePrefix === 15) {
     return "981" + String(Math.floor(Math.random() * 1000000)).padStart(6, "0");
